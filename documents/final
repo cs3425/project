@@ -1,0 +1,28 @@
+### Now that you have seen many full research projects saved online as GitHub repositories do you plan to use GitHub 
+for your future projects as a way to store code and data in the cloud and to share your progress with others?
+I think Github is great because once you know it, it's very easy to navigate and understand. This really aids collaboration and I know for 
+that reason it's pretty ubiquitous among people and scientists who do work like this. I also think it's a neat way for less experienced 
+programmers to get experience working on a bigger project that might be asking for input. It makes a neat community for a lot of different
+levels to work together. Certainly if I ever find myself doing this kind of work for a thesis or grad school, Github's convenience and 
+professionalism will come in handy. 
+
+### Did you project accomplish the goals that you set out for yourself in your proposal? 
+If not, why? What was the hardest problem in your project that were able to overcome? 
+What, if any, was a problem that you were unable to overcome in your project within the given time?
+I struggled a lot with coming up with what is useful and attainable from a scientific standpoint with the data I chose -- especially since
+I chose in in part because of its workability. I had far more complex visualization in mind but did not think that wrangling the data 
+and rearranging it would be such an integral part. I definitely did not expect to spend most of my time manipulating the dataframes 
+and figuring out how to make it workable with my vision. Ultimately the visualization that I ended up doing was less than I had expected 
+to be able to do, but struggling with it showed me where to change my expectations. 
+
+### Do you feel that you've learned the skills necessary perform data analysis in Python, 
+and to write your own program or pipeline for data analysis? What skills do you think you need to work on further, 
+and where would you look to find more information about learning these skills?
+
+I think in any language, it's pretty quick to learn how to apply data analysis tools to a simple and straightforward data set. I think for 
+a lot of situations, this is generally fine. But there is certainly a large learning curve in going from that to handling any problem for 
+any type of data. I think this project showed me that I can have an idea or plan of what it would make sense to do with data, and executing
+it in a way that makes sense on a computer is a whole other question. There's this intermediate thought that has to happen between the 
+abstract "this is what I want to get from some data" and the code of it -- that intermediate step I think requires a lot of exposure both
+on a programatic side and also a scientific side. These are things I think I will continue to develop, especially from looking at other 
+people's work and reading papers with more attention to the methodology and analysis. 
