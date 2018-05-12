@@ -27,7 +27,7 @@ class Project:
         self.met2004df = pd.read_table(self.baseurl+self.met_2004_url,sep='\t',header=(0))
         self.met2005df = pd.read_table(self.baseurl+self.met_2005_url,sep='\t',header=(0))
 
-    def nix(val, lst):
+    # def nix(val, lst):
         return [x for x in lst if x != val]
 
     def load_ticker(self, ticker):
@@ -39,7 +39,7 @@ class Project:
         nut2005data = nut2005data.set_index(self.nut2005df.CHLA_N)
         return pd.DataFrame({ticker: self.nut2004df.CHLA_N, ticker+'_returns': self.nut2004df.CHLA_N.diff()})
 
-    def get_data(y1, y2):
+    def get_data(self, y1, y2):
         df1 = load_ticker(y1)
         df2 = load_ticker(y2)
         data = pd.concat([df1, df2], axis=1)
@@ -48,11 +48,23 @@ class Project:
         data['y2'] = data[y2]
         return data
 
+    def update(self):
+        y1, y2 = ticker1.value, ticker2.value
+
+        data = get_data(y1, y2)
+        source.data = source.from_df(data[['y1', 'y2']])
+        source_static.data = source.data
+
+        corr.title.text = '%s returns vs. %s returns' % (y1, y2)
+        ys1.title.text, ys2.title.text = y1, y2
+
 # set up widgets
 
 
-ticker1 = Select(value='CHLA_N', options=nix('NH4F', DEFAULT_TICKERS))
-ticker2 = Select(value='NH4F', options=nix('CHLA_N', DEFAULT_TICKERS))
+DEFAULT_TICKERS = ['CHLA_N', 'NH4F', 'TotPAR', 'ATemp', 'MaxTemp']
+
+ticker1 = Select(value='CHLA_N', options=(DEFAULT_TICKERS))
+ticker2 = Select(value='NH4F', options=(DEFAULT_TICKERS))
 
 # set up plots
 
@@ -74,52 +86,35 @@ ys2.x_range = ys1.x_range
 ys2.line('date', 'y2', source=source_static)
 ys2.circle('date', 'y2', size=1, source=source, color=None, selection_color="orange")
 
-# set up callbacks
+# # set up callbacks
 
 
-def ticker1_change(attrname, old, new):
-    ticker2.options = nix(new, DEFAULT_TICKERS)
-    update()
+# def ticker1_change(attrname, old, new):
+#     ticker2.options = nix(new, DEFAULT_TICKERS)
+#     update()
 
 
-def ticker2_change(attrname, old, new):
-    ticker1.options = nix(new, DEFAULT_TICKERS)
-    update()
+# def ticker2_change(attrname, old, new):
+#     ticker1.options = nix(new, DEFAULT_TICKERS)
+#     update()
+
+# ticker1.on_change('value', ticker1_change)
+# ticker2.on_change('value', ticker2_change)
 
 
-def update(selected=None):
-    y1, y2 = ticker1.value, ticker2.value
-
-    data = get_data(y1, y2)
-    source.data = source.from_df(data[['y1', 'y2']])
-    source_static.data = source.data
-
-    corr.title.text = '%s returns vs. %s returns' % (y1, y2)
-    ys1.title.text, ys2.title.text = y1, y2
+# def selection_change(attrname, old, new):
+#     y1, y2 = ticker1.value, ticker2.value
+#     data = get_data(y1, y2)
+#     selected = source.selected.indices
+#     if selected:
+#         data = data.iloc[selected, :]
 
 
-ticker1.on_change('value', ticker1_change)
-ticker2.on_change('value', ticker2_change)
+# source.on_change('selected', selection_change)
 
-
-def selection_change(attrname, old, new):
-    y1, y2 = ticker1.value, ticker2.value
-    data = get_data(y1, y2)
-    selected = source.selected.indices
-    if selected:
-        data = data.iloc[selected, :]
-
-
-source.on_change('selected', selection_change)
-
-# set up layout
-widgets = column(ticker1, ticker2)
-main_row = row(corr, widgets)
-series = column(ys1, ys2)
-layout = column(main_row, series)
+# # set up layout
+# widgets = column(ticker1, ticker2)
+# series = column(ys1, ys2)
+#layout = column(main_row, series)
 
 # initialize
-update()
-
-curdoc().add_root(layout)
-curdoc().title = "Nutrients"
