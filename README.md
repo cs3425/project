@@ -1,6 +1,6 @@
 # Biological Activity in the Tijuana River
 
-Photosynthetic active radiation (PAR) is thought to be highly related to predicting algal blooms, which can be detected by Chlorophyll A readings. 
+Photosynthetic active radiation (PAR) is thought to be highly related to predicting algal blooms, which can be detected by Chlorophyll A readings. Visualizing these data together and in relation to each other and their changes over time in one particular area of interest can convey the interactions in complex river systems. 
 
 
 **Data and Tools**<br/>
