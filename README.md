@@ -14,14 +14,12 @@ Tools used include:
 2. `NumPy`
 3.  
 
-**Usage** 
+**Organization** 
 
-To load and clean your Circuitscape raster file to use for simulation, please follow the 1_Upload_Filter_Circuitscape notebook.
-
-The repository is structured according to the following files:<br/>
-_Data:_ This contains the circuitscape raster file. <br/>
-_Notebooks:_ This contains the Jupyter notebooks that detail how to use the code.<br/>
-_Project:_ This contains the original project proposal. <br/>
+_Data:_ This is empty since my data comes from the internet
+_Documents:_ This contains the proposal, final essay, and code review
+_Notebooks:_ This contains a Jupyter notebook that demonstrates the code
+_Project:_ This contains the source code
 
 **Installation**
 
