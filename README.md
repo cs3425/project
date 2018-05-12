@@ -25,9 +25,11 @@ _Project:_ This contains the source code</br>
 
 Clone the repo and use pip to install it.
 
+```
 git clone https://github.com/cs3425/project.git
 cd project/
 pip install .
+```
 
 **API Usage**
 To use the helloworld Python API:
