@@ -32,11 +32,11 @@ pip install .
 ```
 
 **API Usage**
-To use the helloworld Python API:
+To use the project Python API:
 
 ````
 import project
-project.project()
+newgraph = project.Project.update()
 ````
 
 **Author:** Cecilia Sena<br/>**Email:**  cs3425@columbia.edu
