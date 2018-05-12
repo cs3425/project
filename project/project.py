@@ -1,4 +1,6 @@
-#DATA_DIR = join(dirname(__file__), 'daily')
+#!/usr/bin/env python
+
+class Project:
 
 baseurl = "https://www.nodc.noaa.gov/archive/arc0023/0052765/1.1/data/0-data/NODC_2004-2006_Data_Archive/"
 nut_2004_url = "Tijuana%20River/nutrient/data/tjrnut2004.txt"
