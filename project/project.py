@@ -34,7 +34,7 @@ def get_data(y1, y2):
 
 # set up widgets
 
-#stats = PreText(text='', width=500)
+
 ticker1 = Select(value='CHLA_N', options=nix('NH4F', DEFAULT_TICKERS))
 ticker2 = Select(value='NH4F', options=nix('CHLA_N', DEFAULT_TICKERS))
 
@@ -72,16 +72,11 @@ def update(selected=None):
     y1, y2 = ticker1.value, ticker2.value
 
     data = get_data(y1, y2)
-    source.data = source.from_df(data[['y1', 'y2', 't1_returns', 't2_returns']])
+    source.data = source.from_df(data[['y1', 'y2']])
     source_static.data = source.data
-
-    update_stats(data, y1, y2)
 
     corr.title.text = '%s returns vs. %s returns' % (y1, y2)
     ys1.title.text, ys2.title.text = y1, y2
-
-def update_stats(data, y1, y2):
-    stats.text = str(data[[y1, y2, y1+'_returns', y2+'_returns']].describe())
 
 ticker1.on_change('value', ticker1_change)
 ticker2.on_change('value', ticker2_change)
@@ -92,7 +87,6 @@ def selection_change(attrname, old, new):
     selected = source.selected.indices
     if selected:
         data = data.iloc[selected, :]
-    update_stats(data, y1, y2)
 
 source.on_change('selected', selection_change)
 
