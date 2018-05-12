@@ -16,10 +16,10 @@ Tools used include:
 
 **Organization** 
 
-_Data:_ This is empty since my data comes from the internet
-_Documents:_ This contains the proposal, final essay, and code review
-_Notebooks:_ This contains a Jupyter notebook that demonstrates the code
-_Project:_ This contains the source code
+_Data:_ This is empty since my data comes from the internet</br>
+_Documents:_ This contains the proposal, final essay, and code review</br>
+_Notebooks:_ This contains a Jupyter notebook that demonstrates the code</br>
+_Project:_ This contains the source code</br>
 
 **Installation**
 
