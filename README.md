@@ -41,4 +41,4 @@ newgraph = project.Project.update()
 
 **Author:** Cecilia Sena<br/>**Email:**  cs3425@columbia.edu
 
-
+**Based on sample project here: https://github.com/bokeh/bokeh/tree/master/examples/app/stocks**
